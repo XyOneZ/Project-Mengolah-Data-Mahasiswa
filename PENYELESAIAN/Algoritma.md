@@ -16,17 +16,17 @@ Langkah-langkah
 
 2. Selanjutnya, buat fungsi untuk menambahkan data mahasiswa yang berisi:
   - Instruksi untuk memasukkan data mahasiswa yang terdiri dari NIM, Nama, Jurusan, dan Nilai.
-  - Instruksi untuk menyimpan data mahasiswa baru ke dalam vektor daftarMahasiswa.
+  - Instruksi untuk menyimpan data mahasiswa baru ke dalam vektor `daftarMahasiswa`.
   - Tampilkan pesan bahwa mahasiswa berhasil ditambahkan.
     
 3. Setelah fungsi penambahan mahasiswa dibuat, untuk melihat data yang telah dimasukkan, buat fungsi untuk menampilkan daftar mahasiswa yang 
    berisi:
-  - Periksa apakah vektor daftarMahasiswa kosong.
+  - Periksa apakah vektor `daftarMahasiswa` kosong.
   - Jika kosong, tampilkan "Daftar mahasiswa kosong."
-  - Jika tidak kosong, tampilkan setiap data mahasiswa (NIM, Nama, Jurusan, Nilai) dari vektor daftarMahasiswa.
+  - Jika tidak kosong, tampilkan setiap data mahasiswa (NIM, Nama, Jurusan, Nilai) dari vektor `daftarMahasiswa`.
     
 4. Untuk mencari data mahasiswa berdasarkan NIM, buat fungsi yang berisi:
-  - Pencarian mahasiswa berdasarkan NIM di dalam vektor daftarMahasiswa.
+  - Pencarian mahasiswa berdasarkan NIM di dalam vektor `daftarMahasiswa`.
   - Jika ditemukan, kembalikan pointer ke data mahasiswa tersebut.
   - Jika tidak ditemukan, tampilkan "NIM mahasiswa tidak ditemukan."
 
@@ -39,28 +39,28 @@ Langkah-langkah
   - Tampilkan pesan "Data mahasiswa berhasil diubah" jika berhasil, atau "Data tidak tersimpan" jika tidak ada.
 
 7. Untuk menyimpan data mahasiswa ke dalam file, buat fungsi dengan langkah-langkah sebagai berikut:
-  - Buat file dengan nama tertentu (namaFile) untuk menyimpan. 
-  - Buka file dengan nama tertentu (namaFile) untuk penulisan.
-  - Jika file terbuka, tulis setiap data mahasiswa (NIM, Nama, Jurusan, Nilai) dari daftarMahasiswa ke dalam file.
+  - Buat file dengan nama tertentu `(namaFile)` untuk menyimpan. 
+  - Buka file dengan nama tertentu `(namaFile)` untuk penulisan.
+  - Jika file terbuka, tulis setiap data mahasiswa (NIM, Nama, Jurusan, Nilai) dari `daftarMahasiswa` ke dalam file.
   - Tutup file setelah penulisan selesai.
   - Tampilkan pesan "Data berhasil disimpan ke dalam file" jika berhasil, atau "Data tidak tersimpan" jika tidak berhasil.
 
 8. Untuk membaca data mahasiswa dari file, buat fungsi dengan langkah-langkah sebagai berikut:
-  - Buka file dengan nama tertentu (namaFile) untuk pembacaan.
-  - Jika file terbuka, baca setiap data (NIM, Nama, Jurusan, Nilai) dari file ke dalam daftarMahasiswa.
+  - Buka file dengan nama tertentu `(namaFile)` untuk pembacaan.
+  - Jika file terbuka, baca setiap data (NIM, Nama, Jurusan, Nilai) dari file ke dalam `daftarMahasiswa`.
   - Tampilkan pesan "Data berhasil dimuat dari file" jika berhasil, atau "Data tidak diterdapat dalam file" jika tidak berhasil.
   - Tutup file setelah pembacaan selesai.
 
-9. Langkah terakhir adalah menambahkan fungsi main sebagai program utama yang mengatur interaksi dengan pengguna untuk mengelola data mahasiswa. 
-   Di dalam main(), langkah-langkahnya adalah sebagai berikut:
-  - Deklarasikan vektor daftarMahasiswa dan string namaFile.
-  - Panggil fungsi muatDariFile() untuk memuat data dari file namaFile ke dalam daftarMahasiswa.
-  - Buat variabel pilihan dan nim untuk input dari pengguna.
-  - Mulai loop do-while untuk menu operasi:
+9. Langkah terakhir adalah menambahkan fungsi `main` sebagai program utama yang mengatur interaksi dengan pengguna untuk mengelola data 
+   mahasiswa. Di dalam `main()`, langkah-langkahnya adalah sebagai berikut:
+  - Deklarasikan vektor `daftarMahasiswa` dan string `namaFile`.
+  - Panggil fungsi `muatDariFile()` untuk memuat data dari file `namaFile` ke dalam `daftarMahasiswa`.
+  - Buat variabel `pilihan` dan `nim` untuk input dari pengguna.
+  - Mulai loop `do-while` untuk menu operasi:
     * Tampilkan menu operasi kepada pengguna dan minta input pilihan.
     * Gunakan switch-case untuk memproses setiap pilihan:
     * Panggil fungsi sesuai dengan pilihan yang dipilih.
-    * Jika pilihan adalah untuk keluar (misalnya pilihan 6), panggil fungsi simpanKeFile() untuk menyimpan data ke dalam file dan keluar dari 
+    * Jika pilihan adalah untuk keluar (misalnya pilihan 6), panggil fungsi `simpanKeFile()` untuk menyimpan data ke dalam file dan keluar dari 
       loop.
     * Ulangi loop sampai pengguna memilih untuk keluar.
   - Selesai.
