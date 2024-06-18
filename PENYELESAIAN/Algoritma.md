@@ -36,7 +36,7 @@ Langkah-langkah
 
 6. Jika perlu mengubah data mahasiswa, buat fungsi untuk mengubah data mahasiswa berdasarkan NIM dengan langkah-langkah sebagai berikut:
   - Ubah data mahasiswa seperti Nama, Jurusan, dan Nilai.
-  - Tampilkan pesan "Data mahasiswa berhasil diubah" jika berhasil, atau "Data mahasiswa tidak ditemukan" jika tidak ada.
+  - Tampilkan pesan "Data mahasiswa berhasil diubah" jika berhasil, atau "Data tidak tersimpan" jika tidak ada.
 
 7. Untuk menyimpan data mahasiswa ke dalam file, buat fungsi dengan langkah-langkah sebagai berikut:
   - Buat file dengan nama tertentu (namaFile) untuk menyimpan. 
