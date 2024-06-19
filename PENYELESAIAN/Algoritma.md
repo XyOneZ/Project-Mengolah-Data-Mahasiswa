@@ -14,7 +14,16 @@ ALGORITMA NARATIF : Pengolahan Data Mahasiswa
 Langkah-langkah
 1. Pertama-tama, buatlah struktur data mahasiswa yang berisikan (NIM, Nama, Jurusan, dan Nilai).
 
-2. Selanjutnya, buat fungsi untuk menambahkan data mahasiswa yang berisi:
+2. Fungsi `tampilkanMenu()`:
+
+Fungsi ini menampilkan opsi menu kepada pengguna dan meminta input pilihan.
+Input yang diterima adalah bilangan bulat yang sesuai dengan opsi menu yang dipilih,ada 7 menu pilihan.
+
+Validasi pilihan:
+
+Jika pengguna memasukkan pilihan yang tidak valid (misalnya bukan angka 1-7), program akan memberikan pesan "Pilihan tidak valid" dan meminta pengguna untuk memilih lagi.
+
+3. Selanjutnya, buat fungsi untuk menambahkan data mahasiswa yang berisi:
   - Instruksi untuk memasukkan data mahasiswa yang terdiri dari NIM, Nama, Jurusan, dan Nilai.
   - Instruksi untuk menyimpan data mahasiswa baru ke dalam vektor `daftarMahasiswa`.
   - Tampilkan pesan bahwa mahasiswa berhasil ditambahkan.
