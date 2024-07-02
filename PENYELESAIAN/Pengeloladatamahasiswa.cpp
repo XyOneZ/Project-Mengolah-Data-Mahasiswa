@@ -47,7 +47,7 @@ void tampilkanMahasiswa(const vector<Mahasiswa> &daftarMahasiswa) {
         cout << "Daftar mahasiswa kosong." << endl;
     } else {
         cout << "===========================================================================================" << endl;
-        cout << "  No  |      NIM      |               Nama                 |        Jurusan        |   Nilai   " << endl;
+        cout << "  No  |      NIM      |               Nama                  |        Jurusan     |   Nilai   " << endl;
         cout << "===========================================================================================" << endl;
         for (size_t i = 0; i < daftarMahasiswa.size(); ++i) {
             cout << "  " << left << setw(4) << i + 1 << " | ";
@@ -70,10 +70,7 @@ void simpanKeFile(const vector<Mahasiswa> &daftarMahasiswa, const string &namaFi
     ofstream fileOutput(namaFile);
     if (fileOutput.is_open()) {
         for (const Mahasiswa &mhs : daftarMahasiswa) {
-            fileOutput << mhs.nim << endl;
-            fileOutput << mhs.nama << endl;
-            fileOutput << mhs.jurusan << endl;
-            fileOutput << mhs.nilai << endl;
+           fileOutput << mhs.nim << ";" << mhs.nama << ";" << mhs.jurusan << ";" << mhs.nilai << endl;
         }
         fileOutput.close();
         cout << "Data mahasiswa berhasil disimpan ke dalam file." << endl;
@@ -88,19 +85,37 @@ void muatDariFile(vector<Mahasiswa> &daftarMahasiswa, const string &namaFile) {
     if (fileInput.is_open()) {
         daftarMahasiswa.clear(); // Kosongkan dulu vector
         Mahasiswa mhs;
-        while (fileInput >> mhs.nim) {
-            fileInput.ignore(); // Ignore newline
-            getline(fileInput, mhs.nama);
-            getline(fileInput, mhs.jurusan);
-            fileInput >> mhs.nilai;
+        string line;
+
+        while (getline(fileInput, line)) {
+            stringstream ss(line);
+            string nilaiStr;
+
+            getline(ss, mhs.nim, ';');
+            getline(ss, mhs.nama, ';');
+            getline(ss, mhs.jurusan, ';');
+            getline(ss, nilaiStr, ';');
+            
+            try {
+                mhs.nilai = stof(nilaiStr);
+            } catch (const invalid_argument& e) {
+                cout << "Invalid argument for float conversion: " << nilaiStr << endl;
+                continue; // Skip this entry
+            } catch (const out_of_range& e) {
+                cout << "Out of range for float conversion: " << nilaiStr << endl;
+                continue; // Skip this entry
+            }
+
             daftarMahasiswa.push_back(mhs);
         }
+
         fileInput.close();
         cout << "Data mahasiswa berhasil dimuat dari file." << endl;
     } else {
         cout << "Gagal membuka file untuk memuat data." << endl;
     }
 }
+
 
 // Fungsi untuk mencari mahasiswa berdasarkan NIM
 Mahasiswa* cariMahasiswa(vector<Mahasiswa> &daftarMahasiswa, const string &nim) {
