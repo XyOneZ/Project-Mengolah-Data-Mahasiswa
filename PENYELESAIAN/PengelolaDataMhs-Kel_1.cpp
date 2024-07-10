@@ -99,11 +99,11 @@ void muatDariFile(vector<Mahasiswa> &daftarMahasiswa, const string &namaFile) {
             try {
                 mhs.nilai = stof(nilaiStr);
             } catch (const invalid_argument& e) {
-                cout << "Invalid argument for float conversion: " << nilaiStr << endl;
-                continue; // Skip this entry
+                cout << "Kesalahan argumen untuk konversi float: " << nilaiStr << endl;
+                continue; // Lewati data ini
             } catch (const out_of_range& e) {
-                cout << "Out of range for float conversion: " << nilaiStr << endl;
-                continue; // Skip this entry
+                cout << "Keluar dari jangkauan untuk konversi float: " << nilaiStr << endl;
+                continue; // Lewati data ini
             }
 
             daftarMahasiswa.push_back(mhs);
